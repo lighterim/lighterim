@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Lighter.IM Documentation',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Lighter.IM are cool',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -73,9 +73,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Lighter.IM',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Lighter.IM Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -87,7 +87,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/lighterim/lighterim',
           label: 'GitHub',
           position: 'right',
         },
@@ -108,17 +108,17 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {
+            /*{
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
             },
             {
               label: 'Discord',
               href: 'https://discordapp.com/invite/docusaurus',
-            },
+            },*/
             {
               label: 'X',
-              href: 'https://x.com/docusaurus',
+              href: 'https://x.com/LighterIM',
             },
           ],
         },
@@ -131,12 +131,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/lighterim',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Lighter Labs, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
