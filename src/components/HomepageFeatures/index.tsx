@@ -11,40 +11,48 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Zero-Knowledge Proofs',
+    Svg: require('@site/static/img/zkp.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Using Horizen/zkVerify within a TEE (Trusted Execution Environment), generate a trusted on-chain proof based on the payment credential and predefined conditions. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Uniswap Permit2 Escrow',
+    Svg: require('@site/static/img/permit2.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Using <a href="https://eips.ethereum.org/EIPS/eip-712" target="_blank">EIP-712</a>/Uniswap <a href="https://docs.uniswap.org/contracts/permit2/overview" target='_blank'>Permit2</a> for intent-based on-chain escrow, funds are moved to the escrow only after the counterparty confirms the intention, which provides sellers with greater asset utilization and flexibility. 
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'NFT Identity',
+    Svg: require('@site/static/img/nft-id.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        NFT Identity-Based System for Trade Performance and Reputation Assessment.
       </>
     ),
   },
+  {
+    title: 'AI tools',
+    Svg: require('@site/static/img/ai-tools.svg').default,
+    description: (
+      <>
+        provide advice, prompts, and process assistance for the trading process.
+      </>
+    ),
+  }
+  
+
 ];
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
