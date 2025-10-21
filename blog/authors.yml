@@ -1,14 +1,11 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+Dust:
+  name: Dust
+  title: Dev
+  image_url: https://github.com/dust
   page: true
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    x: dustplus
+    github: dust
 
 slorber:
   name: Sébastien Lorber
