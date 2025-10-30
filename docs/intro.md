@@ -39,7 +39,7 @@ The **Nostr Protocol** serves as the infrastructure layer for secure, decentrali
 
 The Lighter.IM transaction flow combines the finality of on-chain smart contracts with the privacy of off-chain ZKP verification, structured into the following key steps:
 
-![transaction flow](/static/img/lighter_im_tx_flow.jpg)
+![transaction flow](/img/lighter_im_tx_flow.jpg)
 
 | Step | Role | Operation |
 | :--- | :--- | :--- |
