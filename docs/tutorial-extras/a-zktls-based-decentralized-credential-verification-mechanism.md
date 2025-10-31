@@ -25,30 +25,8 @@ Lighter.IM adopts a zkTLS architecture based on the Proxy Model. This architectu
 ### 2.1 Architecture Overview   
 The protocol's ecosystem consists of five core components that work in concert to achieve a secure and private flow of credentials.   
 
-$$
-graph TD
-    subgraph Client-Side
-        Prover[Prover<br/>User's Browser Extension/dApp]
-    end
+![Architecture Overview](/img/Architecture-Overview.png)
 
-    subgraph Off-Chain Services
-        Verifier[Verifier Network<br/>zkTLS Proxy]
-        DataHolder[Data Holder<br/>Any HTTPS Website, e.g., bank.com]
-    end
-
-    subgraph On-Chain Contracts
-        RelyingParty[Relying Party<br/>Lighter.IM Smart Contract]
-        ZKPNetwork[ZKP Verification Network<br/>e.g., Horizen app-chain & zkVerify]
-    end
-
-    Prover -- 1.Encrypted Login Request --> Verifier
-    Verifier -- 2.Forward TLS Request --> DataHolder
-    DataHolder -- 3.TLS Certificate & Encrypted Data --> Verifier
-    Verifier -- 4.Cert. Validation + Witness Signature + Forward Encrypted Data --> Prover
-    Prover -- 5.Local Decryption & ZK Proof Generation --> ZKPNetwork
-    ZKPNetwork -- 6.Verify & Aggregate ZK Proof --> RelyingParty
-    Prover -- 7.Verification Success, Execute Action --> RelyingParty
-$$
 ### 2.2 Core Component Definitions   
 1. **Prover (User):**   
     - **Actor:** The user's client software, such as the Lighter.IM browser extension or mobile app.   
@@ -132,45 +110,7 @@ After the Prover decrypts the data and extracts the necessary information (e.g.,
 ### 4.2 Flowchart: Lighter.IM Credential Generation and Verification   
 The following sequence diagram illustrates the complete interaction steps:   
 
-$$
-sequenceDiagram
-    participant Alice
-    participant Verifier
-    participant Bank
-    participant ZKP Network
-    participant LighterContract
-    participant Bob
-
-    Alice->>LighterContract: 1.1 take Bob's Intent, Initiate trade
-   Bob-->>LighterContract: 1.2 escrow 100 USDC <br/>e.g., via permit2
-    LighterContract-->>Alice: 2. Escrow created. Awaiting bank transfer proof.
-
-    Alice->>Verifier: 3. Initiate Session <br/>Target:(bank.com)
-    Verifier->>Bank: 4. [TLS Handshake] Initiate Connection
-    Bank-->>Verifier: 5. [TLS Handshake] Return TLS Certificate
-    Verifier->>Verifier: 6. Validate Certificate <br/>Confirm bank.com
-
-    %% Key Split & Login %%
-    Alice->>Verifier: 7. [MPC] Generate Session Key: (K1, K2)
-    Alice->>Verifier: 8. Send Encrypted Login: Enc_Login
-    Verifier->>Bank: 9. Forward: Enc_Login
-
-    %% Data Fetch & Witnessing %%
-    Bank-->>Verifier: 10. Return Encrypted Account Page:  Enc_Data
-    Verifier->>Verifier: 11. Compute Hash{Enc_Data} & Sign`Sig(H(...))`
-    Verifier-->>Alice: 12. Forward Enc_Data +  Sig
-
-    %% Local Proof & On-Chain Verification  %%
-    Alice->>Alice: Local Decrypt: K1+K2 -> PlaintextData<br/>Extract transfer record <i>$100 to Bob 123456</i><br/>Generate ZK Proof
-    Alice->>ZKP Network: Submit ZK Proof
-    ZKP Network->>ZKP Network: 15. Verify ZK Proof Check Sig & Circuit
-    ZKP Network->>LighterContract: 16. ZKPNet relays proof to target chain
-    ZKP Network->>Alice: 17. Return ZKP Merkle Info or similar
-   
-    Alice-->LighterContract: 18. Submit final transaction with proof info
-    LighterContract->>LighterContract: 19. Confirm Proof is Valid checks Merkle root / relayed msg
-    LighterContract-->>Alice: 20. Release 100 USDC
-$$
+![sequence diagram](/img/sequence_steps.png)
    
 *(Note: Step 16 or steps 17/18 can be used depending on the chain aggregation design.)*   
 ### 4.3 Interaction Steps Explained   
