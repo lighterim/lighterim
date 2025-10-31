@@ -47,7 +47,7 @@ The Lighter.IM transaction flow combines the finality of on-chain smart contract
 | **2** | **Buyer** | Confirms the seller's intent and initiates the Escrow transaction.<br/>**•** The seller's assets are transferred to the Escrow custody contract, verified by the Permit2 signature. The protocol verifies the match between the seller's intent and the transaction details. |
 | **3** | **Buyer** | **Off-Chain Payment:** The buyer completes the fiat payment (e.g., bank transfer) off-chain as required by the transaction details. |
 | **4** | **Buyer (Prover)** | **ZKP Generation & Privacy:** The buyer uses the Lighter.IM browser extension (Prover) to generate the ZKP proof.<br/>**•** The extension establishes a zkTLS session via the zkTLS Proxy (Verifier), which witnesses the payment credential information.<br/>**•** The Prover generates the ZKP using **desensitized data and witnessing information** (assisted by the user). Crucially, sensitive payment data **never leaves the user's device**. |
-| **5** | **ZKVerify & On-Chain Release** | **Cross-Chain Verification & State Relay:**<br/>**•** The Prover submits the proof to the **ZKVerify relay**.<br/>**•** ZKVerify (utilizing Horizen infrastructure) verifies the proof on its application chain and performs **state aggregation/relay** to the Lighter.IM contract on the Base chain (Confirmed by user).<br/>**•** The buyer submits the final proof and transaction information to the Lighter.IM protocol contract on the Base chain. Upon successful verification of the ZKP, the contract releases the escrowed assets to the buyer. |
+| **5** | **ZKVerify & On-Chain Release** | **Cross-Chain Verification & State Relay:**<br/>**•** The Prover submits the proof to the **ZKVerify relay**.<br/>**•** ZKVerify (utilizing Horizen infrastructure) verifies the proof on its application chain and performs **state aggregation/relay** to the Lighter.IM contract on the target chain.<br/>**•** The buyer submits the final proof and transaction information to the Lighter.IM protocol contract on the target chain. Upon successful verification of the ZKP, the contract releases the escrowed assets to the buyer. |
 
 -----
 
@@ -57,7 +57,7 @@ The Lighter.IM transaction flow combines the finality of on-chain smart contract
 
 Horizen/ZKVerify provides the necessary infrastructure and runtime environment for the specialized ZKP generation and verification processes within the Lighter.IM Protocol.
 
-Lighter.IM utilizes ZKVerify to achieve **cross-chain verifiability** and standardize the proof mechanism. This strategic partnership allows the computationally intensive ZKP verification to be offloaded to the ZKVerify application chain. The result is then securely communicated back to the Lighter.IM main contract on the Base chain via a **state aggregation and relay** mechanism (Confirmed by user). This approach significantly optimizes Gas costs and enhances the overall efficiency of the transaction finalization on the destination chain.
+Lighter.IM utilizes ZKVerify to achieve **cross-chain verifiability** and standardize the proof mechanism. This strategic partnership allows the computationally intensive ZKP verification to be offloaded to the ZKVerify application chain. The result is then securely communicated back to the Lighter.IM main contract on the multi-chain via a **state aggregation and relay** mechanism. This approach significantly optimizes Gas costs and enhances the overall efficiency of the transaction finalization on the destination chain.
 
 ### 3.2. Privacy Assurance via zkTLS Session
 
@@ -67,7 +67,7 @@ The protocol relies on zkTLS technology to securely and privately attest to the 
   * **zkTLS Proxy (Verifier):** Acts as a trustless witness, establishing a zkTLS session with the Prover.
   * **The Guarantee:** Within this session, the Proxy can attest to the validity of the payment credential without ever accessing or decrypting the raw, sensitive payment data itself. The Prover uses the desensitized, witnessed information to construct the ZKP, mathematically proving the truth of the statement (payment made) without revealing the underlying secrets.
 
-This mechanism is central to Lighter.IM's trust model: the protocol can operate on the principle of **"Don't Trust, Verify"** by relying on cryptographic soundness to confirm the payment, rather than trusting the user's direct claim or requiring disclosure of private data.[2, 3]
+This mechanism is central to Lighter.IM's trust model: the protocol can operate on the principle of **"Don't Trust, Verify"** by relying on cryptographic soundness to confirm the payment, rather than trusting the user's direct claim or requiring disclosure of private data.
 
 ### 3.3. Security and Future Outlook
 
