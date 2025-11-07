@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 ---
-
-## Lighter.IM User Guide: The Safest, Most Private On/Off-Ramp in Web3
+# Lighter User Guide
+## The Safest, Most Private On/Off-Ramp in Web3
 
 ## Welcome to Lighter.IM Protocol
 

@@ -2,7 +2,8 @@
 sidebar_position: 2
 ---
 
-# Lighter.IM Account System: Why Your Web3 Identity Needs Quadruple Protection
+# Lighter Account System
+## Why Your Web3 Identity Needs Quadruple Protection
 
 Lighter.IM Protocol is designed to be a secure, private, and efficient decentralized on/off-ramp for fiat and crypto. To achieve the highest standards of safety and flexibility, we have engineered a unique four-layer account system.
 
