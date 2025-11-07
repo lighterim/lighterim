@@ -67,7 +67,7 @@ The protocol relies on zkTLS technology to securely and privately attest to the 
   * **zkTLS Proxy (Verifier):** Acts as a trustless witness, establishing a zkTLS session with the Prover.
   * **The Guarantee:** Within this session, the Proxy can attest to the validity of the payment credential without ever accessing or decrypting the raw, sensitive payment data itself. The Prover uses the desensitized, witnessed information to construct the ZKP, mathematically proving the truth of the statement (payment made) without revealing the underlying secrets.
 
-This mechanism is central to Lighter.IM's trust model: the protocol can operate on the principle of **"Don't Trust, Verify"** by relying on cryptographic soundness to confirm the payment, rather than trusting the user's direct claim or requiring disclosure of private data.
+This mechanism is central to Lighter.IM's trust model: the protocol can operate on the principle of **"Don't Trust, Verify"** by relying on cryptographic soundness to confirm the payment, rather than trusting the user's direct claim or requiring disclosure of private data. 
 
 ### 3.3. Security and Future Outlook
 
