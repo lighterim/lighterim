@@ -18,25 +18,25 @@ Your Lighter.IM identity is a complex yet highly secure structure composed of fo
 
 ### 1\. Wallet Address (EOA: Externally Owned Account)
 
-  * **Definition:** This is your primary wallet address on any EVM-compatible chain (e.g., the address from your MetaMask or hardware wallet). [1]
-  * **Role:** The EOA functions as the **Master Controller** of your Lighter.IM identity. It holds the ownership of your Lighter Ticket NFT and, critically, retains the ultimate control over your Token Bound Account (TBA) smart contract. [1]
+  * **Definition:** This is your primary wallet address on any EVM-compatible chain (e.g., the address from your MetaMask or hardware wallet). 
+  * **Role:** The EOA functions as the **Master Controller** of your Lighter.IM identity. It holds the ownership of your Lighter Ticket NFT and, critically, retains the ultimate control over your Token Bound Account (TBA) smart contract. 
 
 ### 2\. Lighter Ticket NFT (Exclusive Identity Credential)
 
-  * **Definition:** An Non-Fungible Token that acts as your **exclusive identity marker** within the Lighter.IM Protocol. [1]
-  * **Role:** This NFT is the **owner of your credit and transaction history**. All trading behavior and fulfillment records are attributed to this unique token, allowing you to build verifiable, on-chain reputation. It also holds an **immutable binding** to your Nostr Public Key. [1]
+  * **Definition:** An Non-Fungible Token that acts as your **exclusive identity marker** within the Lighter.IM Protocol. 
+  * **Role:** This NFT is the **owner of your credit and transaction history**. All trading behavior and fulfillment records are attributed to this unique token, allowing you to build verifiable, on-chain reputation. It also holds an **immutable binding** to your Nostr Public Key. 
   * **Access & Security Barrier:** To ensure a high-quality, abuse-free trading environment, users must **rent** the Lighter Ticket NFT by paying a small fee. This fee acts as a barrier against spam and malicious volume. The fee is fully refundable if you choose to destroy the NFT when finished using the service. **Crucially, destroying the NFT will permanently retire the associated TBA account.** (User Confirmation)
 
 ### 3\. Token Bound Account (TBA: Asset Holder)
 
-  * **Definition:** A cutting-edge smart contract wallet based on the **EIP-6551** open standard. [1]
-  * **Role:** The TBA is the **true owner of your trading assets**. All tokens transferred to you or placed in escrow during a transaction are held by this mini smart contract wallet, providing a flexible and secure execution entry point for complex business logic (like asset release after ZKP verification). [1]
+  * **Definition:** A cutting-edge smart contract wallet based on the **EIP-6551** open standard. 
+  * **Role:** The TBA is the **true owner of your trading assets**. All tokens transferred to you or placed in escrow during a transaction are held by this mini smart contract wallet, providing a flexible and secure execution entry point for complex business logic (like asset release after ZKP verification). 
   * **Management:** You can manage the assets held by the TBA using the dedicated **Lighter.IM application interface** or any standard **EIP-6551 compatible management tools**. (User Confirmation)
 
 ### 4\. Nostr User (Privacy Communication Layer)
 
-  * **Definition:** A public/private key pair based on the Nostr Protocol, utilized for secure, decentralized messaging. [1]
-  * **Role:** Enables **secure and uncensored communication**. The Nostr key ensures that all trade intents, transaction details, and chat messages are encrypted and decentralized, leveraging the public-key cryptography of the Nostr Protocol. [1]
+  * **Definition:** A public/private key pair based on the Nostr Protocol, utilized for secure, decentralized messaging. 
+  * **Role:** Enables **secure and uncensored communication**. The Nostr key ensures that all trade intents, transaction details, and chat messages are encrypted and decentralized, leveraging the public-key cryptography of the Nostr Protocol. 
   * **Key Management:** Lighter.IM can **locally generate and securely store** the Nostr key pair within the browser application, or you can import a fresh key. Full control, backup tools, and ownership of this private key are always retained by you. (User Confirmation)
 
 -----
