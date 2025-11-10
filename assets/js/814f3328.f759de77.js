@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklighter_docs=self.webpackChunklighter_docs||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"The Imperative for Intent-Based Transactions","permalink":"/blog/The-Imperative-for-Intent-Based-Transactions","unlisted":false,"date":"2025-10-21T00:00:00.000Z"}]}')}}]);
