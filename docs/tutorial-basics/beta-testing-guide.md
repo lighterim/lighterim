@@ -29,7 +29,7 @@ To simulate a real trade, we recommend using two different browser profiles or b
 **Note: For Horizen USDC, use the "Write Contract" function on the explorer to mint test tokens.*
 
 * Ethereum Sepolia(ETH gas)
-![ethereum sepolia](/img/ethereum_sepolia_faucet.jpg)
+![ethereum sepolia](/img/ethereum-sepolia-faucet.jpg)
 
 * Base Sepolia(ETH gas)
 ![base sepolia](/img/base_sepolia_faucet.jpg)
