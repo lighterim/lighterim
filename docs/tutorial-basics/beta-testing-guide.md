@@ -79,7 +79,7 @@ Follow these steps to complete a full trade cycle:
 Your feedback is the most important part of this beta. If you find a bug or have a UI suggestion, let us know!
 
 * **Google Form:** [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfZVI6mxDz7R7p7bOqHR6ZELYezi5nGA-kQA03u51DV-Z_0RA/viewform?pli=1&pli=1)
-* **GitHub Issues:** [Lighter-EVM-Contract Repo](https://github.com/lighterim/lighter-evm-contract/)
+* **GitHub Issues:** [Lighter-EVM-Contract Repo](https://github.com/lighterim/lighter-evm-contract/issues/new/choose)
 * **Telegram Support:** [Join the Chat](https://t.me/lighterim_user)
 
 **Happy Testing! Together, we're building the future of decentralized liquidity.** 🚀
