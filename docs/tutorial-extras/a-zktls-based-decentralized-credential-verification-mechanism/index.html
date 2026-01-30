@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">A zkTLS-based Decentralized Credential Verification Mechanism | Lighter.IM Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.lighter.im/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.lighter.im/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.lighter.im/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="A zkTLS-based Decentralized Credential Verification Mechanism | Lighter.IM Documentation"><meta data-rh="true" name="description" content="Version: 1.0"><meta data-rh="true" property="og:description" content="Version: 1.0"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.lighter.im/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism"><link data-rh="true" rel="alternate" href="https://docs.lighter.im/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.lighter.im/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Overview - Extras","item":"https://docs.lighter.im/docs/category/overview---extras"},{"@type":"ListItem","position":2,"name":"A zkTLS-based Decentralized Credential Verification Mechanism","item":"https://docs.lighter.im/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Lighter.IM Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Lighter.IM Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.da0391ba.css">
+<script src="/assets/js/runtime~main.fbbc5e1c.js" defer="defer"></script>
+<script src="/assets/js/main.8e8e2069.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Lighter.IM Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Lighter.IM Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Lighter.IM</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Overview</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/lighterim/lighterim" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro">intro</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/overview---basics">Overview - Basics</a><button aria-label="Expand sidebar category &#x27;Overview - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/overview---extras">Overview - Extras</a><button aria-label="Collapse sidebar category &#x27;Overview - Extras&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism">A zkTLS-based Decentralized Credential Verification Mechanism</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/tutorial-extras/lighter-account-system">Lighter Account System</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/overview---extras"><span>Overview - Extras</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">A zkTLS-based Decentralized Credential Verification Mechanism</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>A zkTLS-based Decentralized Credential Verification Mechanism</h1></header>
+<p>Version: 1.0<br>
+<!-- -->Date: October 31, 2025</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="abstract">Abstract<a href="#abstract" class="hash-link" aria-label="Direct link to Abstract" title="Direct link to Abstract">​</a></h2>
+<p>The Lighter.IM Protocol is a pioneering decentralized fiat On/Off-Ramp solution. This protocol leverages Zero-Knowledge Proof (ZKP) technology in conjunction with zkTLS (a trusted-witness-based TLS proxy mechanism) to provide a trustless, secure, efficient, and privacy-preserving environment for users to enter and exit the Web3 world.<br>
+<!-- -->This whitepaper details the core architecture, cryptographic principles, and operational workflow of Lighter.IM. The protocol&#x27;s key innovation lies in combining the non-custodial security of Decentralized Finance (DeFi) with off-chain credential verification based on ZKP. Users can generate ZK proofs of their transactions or data from any Web2 website (such as an online bank) via HTTPS sessions, all from their local device (e.g., a browser extension).<br>
+<!-- -->This mechanism enables on-chain smart contracts (Relying Parties) to reliably verify the authenticity of a user&#x27;s off-chain fiat operations without the user ever exposing sensitive information, such as account credentials, specific balances, or transaction histories. Lighter.IM acts as a faithful trustee for the counterparty&#x27;s intent, automatically executing the release of escrowed assets upon successful proof verification, thereby creating a secure and automated Web3 on/off-ramp bridge.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-introduction">1. Introduction<a href="#1-introduction" class="hash-link" aria-label="Direct link to 1. Introduction" title="Direct link to 1. Introduction">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-background-the-core-challenge-of-web3-onoff-ramps">1.1 Background: The Core Challenge of Web3 On/Off-Ramps<a href="#11-background-the-core-challenge-of-web3-onoff-ramps" class="hash-link" aria-label="Direct link to 1.1 Background: The Core Challenge of Web3 On/Off-Ramps" title="Direct link to 1.1 Background: The Core Challenge of Web3 On/Off-Ramps">​</a></h3>
+<p>Currently, the fiat on/off-ramp channels connecting Traditional Finance (TradFi) with the Web3 world face significant bottlenecks in trust, efficiency, and privacy. Centralized Exchanges (CEXs) require users to custody their assets, introducing risks of single points of failure and privacy leaks. Meanwhile, Over-the-Counter (OTC) or P2P markets rely on fragile social trust and manual arbitration, which is inefficient and fraught with fraud risk.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-the-lighterim-solution">1.2 The Lighter.IM Solution<a href="#12-the-lighterim-solution" class="hash-link" aria-label="Direct link to 1.2 The Lighter.IM Solution" title="Direct link to 1.2 The Lighter.IM Solution">​</a></h3>
+<p>The Lighter.IM protocol aims to solve these problems at their root. We propose a non-custodial solution where the foundation of trust is not a centralized entity or social reputation, but rather verifiable cryptography and code.<br>
+<!-- -->This protocol allows users to use their operations on any bank or payment application (Data Holder), such as a &quot;completed transfer,&quot; as &quot;evidence.&quot; Through the zkTLS proxy model and a local ZK circuit, they generate a concise, encrypted &quot;credential&quot; (a ZK proof). The on-chain smart contract (Relying Party) only needs to verify this credential to be convinced that the user has completed the agreed-upon off-chain action, thereby automatically releasing the locked digital assets.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-core-technical-challenges">1.3 Core Technical Challenges<a href="#13-core-technical-challenges" class="hash-link" aria-label="Direct link to 1.3 Core Technical Challenges" title="Direct link to 1.3 Core Technical Challenges">​</a></h3>
+<p>To achieve this goal, the Lighter.IM protocol must solve three core challenges:</p>
+<ol>
+<li><strong>Authenticity vs. Forgery:</strong> How to ensure the credential provided by the user (e.g., a bank transfer record) genuinely originates from the target server (e.g., <code>bank.com</code>) and is not locally forged by the user?</li>
+<li><strong>Privacy vs. Verification:</strong> How to prove to a contract that &quot;a $100 transfer to account 123456 was completed at 10:00 AM on Jan 1, 2025&quot; without revealing any additional information, such as the specific account balance, account holder&#x27;s identity, full transaction history, or login credentials?</li>
+<li><strong>High Computation vs. On-Chain Efficiency:</strong> ZKP generation (Proving) is computationally intensive, and its verification on-chain (especially on EVM-compatible chains) is expensive. How can we build a system that is both user-friendly and economically viable?</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-protocol-architecture-and-core-components">2. Protocol Architecture and Core Components<a href="#2-protocol-architecture-and-core-components" class="hash-link" aria-label="Direct link to 2. Protocol Architecture and Core Components" title="Direct link to 2. Protocol Architecture and Core Components">​</a></h2>
+<p>Lighter.IM adopts a zkTLS architecture based on the Proxy Model. This architecture decouples the four key stages: data acquisition, witnessing, proof generation, and proof verification.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="21-architecture-overview">2.1 Architecture Overview<a href="#21-architecture-overview" class="hash-link" aria-label="Direct link to 2.1 Architecture Overview" title="Direct link to 2.1 Architecture Overview">​</a></h3>
+<p>The protocol&#x27;s ecosystem consists of five core components that work in concert to achieve a secure and private flow of credentials.</p>
+<p><img decoding="async" loading="lazy" alt="Architecture Overview" src="/assets/images/Architecture-Overview-d7cbc01384fb45a3efa53d9f3cc55392.png" width="1786" height="988" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="22-core-component-definitions">2.2 Core Component Definitions<a href="#22-core-component-definitions" class="hash-link" aria-label="Direct link to 2.2 Core Component Definitions" title="Direct link to 2.2 Core Component Definitions">​</a></h3>
+<ol>
+<li><strong>Prover (User):</strong>
+<ul>
+<li><strong>Actor:</strong> The user&#x27;s client software, such as the Lighter.IM browser extension or mobile app.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Holds the login credentials for the target website (Data Holder);</li>
+<li>Initiates the proof request;</li>
+<li>Collaborates with the Verifier to complete the proxied TLS session;</li>
+<li>Locally decrypts the session data to extract key information (the secret plaintext); (e) Runs the ZK circuit locally to generate the final ZK proof.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data Holder:</strong>
+<ul>
+<li><strong>Actor:</strong> Any website providing services via HTTPS, e.g., <code>bank.com</code>, <code>wise.com</code>, etc.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Provides data services as normal.</li>
+<li>A major advantage of the Lighter.IM protocol is that it <strong>requires absolutely no modification from the Data Holder</strong>. The server is not even aware it is being &quot;proven.&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Verifier Network (zkTLS Proxy):</strong>
+<ul>
+<li><strong>Actor:</strong> A (decentralized) group of nodes acting as a &quot;semi-trusted&quot; proxy.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li><strong>TLS Witness:</strong> Forwards the Prover&#x27;s network traffic and <strong>rigorously validates</strong> the Data Holder&#x27;s TLS certificate to ensure its identity is authentic;</li>
+<li><strong>Key Collaborator:</strong> Holds a share (e.g., K2) of the TLS session key, making it <strong>unable to independently decrypt</strong> the session content;</li>
+<li><strong>Witness Signature:</strong> Computes a hash of the <strong>Encrypted Data Stream (EncryptedData)</strong>—which it cannot decrypt—and signs it, guaranteeing the data&#x27;s authentic origin.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Relying Party (dApp):</strong>
+<ul>
+<li><strong>Actor:</strong> Any third party that needs to consume the proof, specifically referring to an <strong>on-chain smart contract</strong> in the Lighter.IM scenario.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Defines the required proof format (i.e., the ZK circuit logic);</li>
+<li>Receives the verified proof, relayed by the ZKP Verification Network;</li>
+<li>Automatically executes business logic (e.g., releasing escrowed USDC) upon confirming the proof&#x27;s validity.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>ZKP Verification Network:</strong>
+<ul>
+<li><strong>Actor:</strong> A specialized (application) chain for ZKP verification, such as Horizen app-chain and zkVerify.</li>
+<li><strong>Responsibilities:</strong> Solves the third challenge from section 1.3.<!-- -->
+<ul>
+<li>Provides an efficient, low-cost environment to execute the ZK proof verification algorithm;</li>
+<li>Acts as an aggregator and relayer, securely passing the verification result to the Relying Party on the target chain (e.g., Ethereum).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-core-mechanisms-and-security-model">3. Core Mechanisms and Security Model<a href="#3-core-mechanisms-and-security-model" class="hash-link" aria-label="Direct link to 3. Core Mechanisms and Security Model" title="Direct link to 3. Core Mechanisms and Security Model">​</a></h2>
+<p>Lighter.IM&#x27;s security and privacy guarantees are built upon the clever splitting of the TLS protocol and the cryptographic commitments of ZK proofs.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="31-authenticity-guarantee-tls-session-witnessing">3.1 Authenticity Guarantee: TLS Session Witnessing<a href="#31-authenticity-guarantee-tls-session-witnessing" class="hash-link" aria-label="Direct link to 3.1 Authenticity Guarantee: TLS Session Witnessing" title="Direct link to 3.1 Authenticity Guarantee: TLS Session Witnessing">​</a></h3>
+<p>To prevent the Prover from connecting to a forged server (e.g., <code>fake-bank.com</code>) to generate a false proof, <strong>all TLS handshakes must be proxied through the Verifier.</strong></p>
+<ul>
+<li>The Prover initiates a session request to the Verifier.</li>
+<li>The Verifier initiates a TLS connection to the Data Holder ( <code>bank.com</code>) on the Prover&#x27;s behalf.</li>
+<li><code>bank.com</code> returns its TLS certificate.</li>
+<li>The Verifier <strong>immediately validates this certificate</strong> on the proxy side, checking that it is signed by a trusted root Certificate Authority (CA) and that the domain matches.</li>
+<li>The session only proceeds if the validation is successful. This mechanism guarantees the authenticity of the communicating party at the source.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="32-privacy-protection-split-session-keys">3.2 Privacy Protection: Split Session Keys<a href="#32-privacy-protection-split-session-keys" class="hash-link" aria-label="Direct link to 3.2 Privacy Protection: Split Session Keys" title="Direct link to 3.2 Privacy Protection: Split Session Keys">​</a></h3>
+<p>To prevent the Verifier from snooping on user data (like bank passwords or balances), the session key negotiation is split.</p>
+<ul>
+<li>The TLS session&#x27;s Master Secret is generated collaboratively by the Prover and the Verifier (e.g., via MPC or key exchange).</li>
+<li>Ultimately, the Prover holds key share K1, and the Verifier holds key share K2.</li>
+<li><strong>Neither party can decrypt the session data with their share alone.</strong></li>
+<li>When <code>bank.com</code> sends encrypted data ( <code>EncryptedData</code>) back, the Verifier cannot decrypt it and can only forward it untouched to the Prover.</li>
+<li>The Prover, in their local client, can only decrypt the data using a combination of K1 and K2, revealing the plaintext HTML ( <code>PlaintextData</code>).</li>
+<li><strong>Result:</strong> The Verifier, acting as a proxy, only ever sees encrypted gibberish, learning nothing about the user&#x27;s sensitive information.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="33-reliable-attestation-encrypted-stream-signature">3.3 Reliable Attestation: Encrypted Stream Signature<a href="#33-reliable-attestation-encrypted-stream-signature" class="hash-link" aria-label="Direct link to 3.3 Reliable Attestation: Encrypted Stream Signature" title="Direct link to 3.3 Reliable Attestation: Encrypted Stream Signature">​</a></h3>
+<p>This is the key mechanism that ensures the Prover does not &quot;swap out&quot; the data locally.</p>
+<ol>
+<li>When the Verifier receives <code>EncryptedData</code> from <code>bank.com</code>, before forwarding it, it computes a hash of the encrypted packet: <code>H(EncryptedData)</code>.</li>
+<li>The Verifier signs this hash with its private key, generating a <strong>witness signature</strong>: <code>Sig(H(EncryptedData))</code>.</li>
+<li>The Verifier sends both <code>EncryptedData</code> and <code>Sig(H(EncryptedData))</code> to the Prover.</li>
+</ol>
+<p>This signature means: &quot;I (Verifier) guarantee that an encrypted data packet with the fingerprint H(...) truly originated from the <code>bank.com</code> server I authenticated.&quot;</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="34-final-privacy--binding-the-zk-proof">3.4 Final Privacy &amp; Binding: The ZK-Proof<a href="#34-final-privacy--binding-the-zk-proof" class="hash-link" aria-label="Direct link to 3.4 Final Privacy &amp; Binding: The ZK-Proof" title="Direct link to 3.4 Final Privacy &amp; Binding: The ZK-Proof">​</a></h3>
+<p>After the Prover decrypts the data and extracts the necessary information (e.g., &quot;transfer of $100&quot;), they execute the ZK circuit. This ZK proof mathematically binds all of the following assertions:</p>
+<ul>
+<li><strong>Private Inputs:</strong></li>
+</ul>
+<ol>
+<li>The complete plaintext data <code>PlaintextData</code>.</li>
+<li>The session key (or its shares) used for decryption.</li>
+</ol>
+<ul>
+<li><strong>Public Inputs:</strong></li>
+</ul>
+<ol start="3">
+<li>The Data Holder&#x27;s domain name (e.g., <code>bank.com</code>).</li>
+<li>The Verifier&#x27;s witness signature <code>Sig(H(EncryptedData))</code>.</li>
+<li>The hash of the encrypted data <code>H(EncryptedData)</code>.</li>
+<li>The Prover&#x27;s public claim (e.g., &quot;A $100 transfer to account 123456 was made after 10:00 AM on Jan 1, 2025&quot;).</li>
+</ol>
+<p><strong>The ZK circuit verifies:</strong></p>
+<ul>
+<li>(a) That decrypting <code>EncryptedData</code> (whose hash must equal the public input <code>H(EncryptedData)</code>) using the session key indeed results in <code>PlaintextData</code>.</li>
+<li>(b) That the information extracted from <code>PlaintextData</code> correctly satisfies the public claim.</li>
+</ul>
+<p><strong>When the Relying Party (on-chain contract) verifies this ZK proof, it:</strong></p>
+<ol>
+<li>Checks the validity of the Verifier&#x27;s signature <code>Sig(H(EncryptedData))</code>.</li>
+<li>Verifies the ZK proof itself.</li>
+</ol>
+<p><strong>Why cheating is ineffective:</strong> If the Prover forges plaintext data <code>FakePlaintext</code>, it must correspond to some <code>FakeEncryptedData</code>. However, the Prover cannot obtain the Verifier&#x27;s signature for <code>H(FakeEncryptedData)</code>. The ZK circuit would fail because the public inputs (the signature and the hash) would not match the private data. The Prover cannot forge data without breaking this hash-and-signature bond.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-detailed-workflow">4. Detailed Workflow<a href="#4-detailed-workflow" class="hash-link" aria-label="Direct link to 4. Detailed Workflow" title="Direct link to 4. Detailed Workflow">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-scenario-definition">4.1 Scenario Definition<a href="#41-scenario-definition" class="hash-link" aria-label="Direct link to 4.1 Scenario Definition" title="Direct link to 4.1 Scenario Definition">​</a></h3>
+<p><strong>Scenario:</strong> User Alice (Prover) wants to buy 100 USDC from Bob on Lighter.IM (Relying Party) for $100. Bob requires Alice to prove she has completed a $100 fiat transfer to his account via <code>bank.com</code> (Data Holder).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="42-flowchart-lighterim-credential-generation-and-verification">4.2 Flowchart: Lighter.IM Credential Generation and Verification<a href="#42-flowchart-lighterim-credential-generation-and-verification" class="hash-link" aria-label="Direct link to 4.2 Flowchart: Lighter.IM Credential Generation and Verification" title="Direct link to 4.2 Flowchart: Lighter.IM Credential Generation and Verification">​</a></h3>
+<p>The following sequence diagram illustrates the complete interaction steps:</p>
+<p><img decoding="async" loading="lazy" alt="sequence diagram" src="/assets/images/sequence_steps-54810d2412d08c55549d0c23bdb03277.png" width="1676" height="1350" class="img_ev3q"></p>
+<p><em>(Note: Step 16 or steps 17/18 can be used depending on the chain aggregation design.)</em></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="43-interaction-steps-explained">4.3 Interaction Steps Explained<a href="#43-interaction-steps-explained" class="hash-link" aria-label="Direct link to 4.3 Interaction Steps Explained" title="Direct link to 4.3 Interaction Steps Explained">​</a></h3>
+<ol>
+<li><strong>Step 1: Proof Request</strong>
+<ul>
+<li>Alice initiates an escrow trade on the Lighter.IM contract (Relying Party). The contract requires Alice to provide a proof from <code>bank.com</code> for &quot;a $100 transfer to Bob&#x27;s account 123456 after 10:00 AM, Jan 1, 2025.&quot;</li>
+</ul>
+</li>
+<li><strong>Step 2: Session Initiation</strong>
+<ul>
+<li>Alice&#x27;s Lighter.IM extension (Prover) contacts the Verifier Network.</li>
+</ul>
+</li>
+<li><strong>Step 3: Proxied TLS Handshake &amp; Certificate Validation</strong>
+<ul>
+<li>The Verifier and Prover collaboratively initiate a TLS handshake with <code>bank.com</code> (Data Holder).</li>
+<li>The Verifier validates the <code>bank.com</code> TLS certificate, ensuring its authenticity.</li>
+</ul>
+</li>
+<li><strong>Step 4: Key Split &amp; Login</strong>
+<ul>
+<li>Prover and Verifier collaboratively compute the session key (Prover gets K1, Verifier gets K2).</li>
+<li>Prover submits their encrypted login request through the Verifier.</li>
+</ul>
+</li>
+<li><strong>Step 5: Encrypted Stream &amp; Witness Signature</strong>
+<ul>
+<li><code>bank.com</code> validates the credentials and sends back the <strong>encrypted data (Enc_Data)</strong> containing the transfer history.</li>
+<li>The Verifier cannot decrypt this data but computes <code>H(Enc\_Data)</code> and generates <code>Sig(H(Enc\_Data))</code>.</li>
+<li>The Verifier forwards <code>Enc\_Data</code> and its signature to the Prover.</li>
+</ul>
+</li>
+<li><strong>Step 6: Local Decryption &amp; Proof Generation</strong>
+<ul>
+<li>The Prover&#x27;s extension locally decrypts the data stream using K1 and K2, yielding the plaintext HTML.</li>
+<li>The extension parses the HTML to find the record matching the claim (&quot;$100 to Bob 123456...&quot;).</li>
+<li>The extension executes the ZK circuit, feeding in the (private) plaintext and the (public) signature, hash, and claim. This outputs the ZK Proof (Proof.data).</li>
+</ul>
+</li>
+<li><strong>Step 7: Proof Verification &amp; Execution</strong>
+<ul>
+<li>The Prover submits the ZK Proof to the ZKP Verification Network (ZKPNet).</li>
+<li>ZKPNet efficiently verifies the proof (checking both the Verifier&#x27;s signature and the ZK circuit logic).</li>
+<li>ZKPNet aggregates the verification result and makes it available to the target chain (e.g., via a Merkle root or a cross-chain message).</li>
+<li>Alice submits the final transaction to the Lighter.IM contract, referencing the valid proof.</li>
+<li>The contract confirms the proof&#x27;s validity and automatically releases the escrowed 100 USDC to Bob. The trade is complete.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-conclusion-and-future-outlook">5. Conclusion and Future Outlook<a href="#5-conclusion-and-future-outlook" class="hash-link" aria-label="Direct link to 5. Conclusion and Future Outlook" title="Direct link to 5. Conclusion and Future Outlook">​</a></h2>
+<p>The Lighter.IM protocol, by combining the zkTLS proxy model with Zero-Knowledge Proofs, successfully creates a trustless and privacy-preserving decentralized credential system. This architecture not only solves the core trust problem of fiat on/off-ramps but also offers a general-purpose solution that can be extended to any Web3 scenario requiring Web2 data credentials, such as credit lending, digital identity, and on-chain reputation.<br>
+<!-- -->By outsourcing the heavy ZKP verification workload to a specialized network, this protocol achieves economic viability and efficient on-chain interaction while maintaining the highest level of security. We believe the &quot;Off-Chain Witnessing + Local Proving + On-Chain Verification&quot; paradigm demonstrated by Lighter.IM will become a standard for trusted data interoperability between the Web2 and Web3 worlds.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/${organizationName}/${projectName}/tree/main/docs/tutorial-extras/a-zktls-based-decentralized-credential-verification-mechanism.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/overview---extras"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Overview - Extras</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/tutorial-extras/lighter-account-system"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Lighter Account System</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#abstract" class="table-of-contents__link toc-highlight">Abstract</a></li><li><a href="#1-introduction" class="table-of-contents__link toc-highlight">1. Introduction</a><ul><li><a href="#11-background-the-core-challenge-of-web3-onoff-ramps" class="table-of-contents__link toc-highlight">1.1 Background: The Core Challenge of Web3 On/Off-Ramps</a></li><li><a href="#12-the-lighterim-solution" class="table-of-contents__link toc-highlight">1.2 The Lighter.IM Solution</a></li><li><a href="#13-core-technical-challenges" class="table-of-contents__link toc-highlight">1.3 Core Technical Challenges</a></li></ul></li><li><a href="#2-protocol-architecture-and-core-components" class="table-of-contents__link toc-highlight">2. Protocol Architecture and Core Components</a><ul><li><a href="#21-architecture-overview" class="table-of-contents__link toc-highlight">2.1 Architecture Overview</a></li><li><a href="#22-core-component-definitions" class="table-of-contents__link toc-highlight">2.2 Core Component Definitions</a></li></ul></li><li><a href="#3-core-mechanisms-and-security-model" class="table-of-contents__link toc-highlight">3. Core Mechanisms and Security Model</a><ul><li><a href="#31-authenticity-guarantee-tls-session-witnessing" class="table-of-contents__link toc-highlight">3.1 Authenticity Guarantee: TLS Session Witnessing</a></li><li><a href="#32-privacy-protection-split-session-keys" class="table-of-contents__link toc-highlight">3.2 Privacy Protection: Split Session Keys</a></li><li><a href="#33-reliable-attestation-encrypted-stream-signature" class="table-of-contents__link toc-highlight">3.3 Reliable Attestation: Encrypted Stream Signature</a></li><li><a href="#34-final-privacy--binding-the-zk-proof" class="table-of-contents__link toc-highlight">3.4 Final Privacy &amp; Binding: The ZK-Proof</a></li></ul></li><li><a href="#4-detailed-workflow" class="table-of-contents__link toc-highlight">4. Detailed Workflow</a><ul><li><a href="#41-scenario-definition" class="table-of-contents__link toc-highlight">4.1 Scenario Definition</a></li><li><a href="#42-flowchart-lighterim-credential-generation-and-verification" class="table-of-contents__link toc-highlight">4.2 Flowchart: Lighter.IM Credential Generation and Verification</a></li><li><a href="#43-interaction-steps-explained" class="table-of-contents__link toc-highlight">4.3 Interaction Steps Explained</a></li></ul></li><li><a href="#5-conclusion-and-future-outlook" class="table-of-contents__link toc-highlight">5. Conclusion and Future Outlook</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Overview</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://x.com/LighterIM" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/lighterim" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Lighter Labs, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
