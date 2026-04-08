@@ -16,7 +16,7 @@ Lighter.IM utilizes a unique **4-layer account architecture** to ensure your pri
 *   **TBA (Token Bound Account)**: A smart contract wallet based on **EIP-6551** controlled by your NFT. It acts as a **"Security Sandbox"** for all trading assets.
 *   **Nostr**: A decentralized protocol for end-to-end encrypted, censorship-resistant communication.
 
-![4-layer account system](/img/static/img/lighter_im_4_layer.jpg)
+![4-layer account system](/img/lighter_im_4_layer.jpg)
 ---
 
 ## 2. Onboarding & Trading Guide
