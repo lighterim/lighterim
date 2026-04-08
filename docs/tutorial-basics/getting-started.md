@@ -16,6 +16,7 @@ Lighter.IM utilizes a unique **4-layer account architecture** to ensure your pri
 *   **TBA (Token Bound Account)**: A smart contract wallet based on **EIP-6551** controlled by your NFT. It acts as a **"Security Sandbox"** for all trading assets.
 *   **Nostr**: A decentralized protocol for end-to-end encrypted, censorship-resistant communication.
 
+![4-layer account system](/img/static/img/lighter_im_4_layer.jpg)
 ---
 
 ## 2. Onboarding & Trading Guide
@@ -25,6 +26,8 @@ To trade, you must first rent a Lighter Ticket NFT (typically **TokenID 10000+**
 *   **Sybil Resistance**: The refundable rental fee prevents malicious bot activity and spam.
 *   **Identity Activation**: Upon minting, the protocol automatically deploys your **TBA** and links it to your **Nostr public key**.
 
+![mint lighter ticket nft](/img/mint_lighter_ticket.jpg)
+
 ### Step 2: Create a Trading Intent (Maker)
 As a Maker, you use **EIP-712** to sign your trade intents (Sellers will use **Uniswap Permit2**). You can customize your intent to ensure compliance with your trading goals:
 *   **Asset Specs**: Target Token, Quantity, and Price.
@@ -32,11 +35,15 @@ As a Maker, you use **EIP-712** to sign your trade intents (Sellers will use **U
 *   **Preferences**: Supported payment methods, fiat currency, and expiration time.
 *   **Counterparty Requirements**: Filter peers by their on-chain reputation (e.g., total volume or completion rate).
 
+![post intent](/img/post_new_intent.jpg)
+
 ### Step 3: Browse & Take an Intent (Taker)
 Find an intent that matches your needs and initiate the trade. The protocol will automatically verify pre-conditions, including:
 *   **Dynamic Volume**: If the Maker allows, you can select any amount within their specified range.
 *   **Price Sync**: Displays either the fixed limit price or the real-time market price with applied slippage.
 *   **Payment Match**: You must have a payment method that matches the Maker’s requirements.
+
+![take intent](/img/take_intent.jpg)
 
 ---
 
@@ -61,11 +68,15 @@ Once a trade is initiated, participants enter a private, encrypted **Nostr sessi
 *   **Mediators**: Arbitrators (**IDs 10-100**) join the session to review evidence. They are held to a **Zero-Trade Quota** to ensure unbiased mediation.
 *   **Enforcement**: If a party ignores the mediator’s ruling, the other party can execute the final settlement on-chain once the **Arbitration Escape Window** closes.
 
+![resove dispute](/img/arbitration_dispute_resolve.jpeg)
+
 ---
 
 ## 4. Reputation & Privacy
 *   **Private Communication**: All trade intents and chat logs are stored on the Nostr network, ensuring your financial privacy remains censorship-resistant.
 *   **On-chain Credit Score**: Your successful trade history is permanently tied to your NFT, building a **portable reputation**. Data points include completion rate, average release time, and dispute history.
+
+![honour](/img/honour.jpg)
 
 ---
 
