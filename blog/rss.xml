@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Lighter.IM Documentation Blog</title>
+        <link>https://docs.lighter.im/blog</link>
+        <description>Lighter.IM Documentation Blog</description>
+        <lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[The Architecture of Trust]]></title>
+            <link>https://docs.lighter.im/blog/The-Architecture-of-Trust</link>
+            <guid>https://docs.lighter.im/blog/The-Architecture-of-Trust</guid>
+            <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[——Why Transactions Fail and How Lighter.IM Fixes the "Iron Triangle" of Trade]]></description>
+            <content:encoded><![CDATA[<p><em>——Why Transactions Fail and How Lighter.IM Fixes the "Iron Triangle" of Trade</em></p>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:8px;margin-bottom:1.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1)"><iframe src="https://www.youtube-nocookie.com/embed/8X5zIV89n0A" title="Video Player" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>In the digital economy, we facilitate millions of swaps daily. Yet, if you look under the hood of any failed trade—whether it's a simple P2P exchange, a high-stakes OTC deal, or even the classic "escrow" tropes in cinema—the collapse always traces back to one thing: <strong>Architectural Imbalance.</strong></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-the-three-dimensions-of-every-trade">1. The Three Dimensions of Every Trade<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#1-the-three-dimensions-of-every-trade" class="hash-link" aria-label="Direct link to 1. The Three Dimensions of Every Trade" title="Direct link to 1. The Three Dimensions of Every Trade">​</a></h3>
+<p>To build a truly resilient protocol, we must first abstract any transaction into its three core elements:</p>
+<ul>
+<li><strong>Ownership</strong>: The legal or cryptographic claim to an asset. (Who "holds" the bag?)</li>
+<li><strong>Control</strong>: The power to manage, decide, or trigger the movement of that asset. (Who "pulls" the trigger?)</li>
+<li><strong>Information Flow</strong>: This is the connective tissue. It includes <strong>Communication</strong> (negotiation and intent) and <strong>Verification</strong> (proof of performance).</li>
+</ul>
+<p>In a perfect trade, these three elements form a stable "Sovereignty Triangle." Most failures occur because one party is forced to surrender control without a guarantee of ownership, or because the information flow is corrupted by centralized middlemen.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-lighterim-re-engineering-the-sovereignty-triangle">2. Lighter.IM: Re-Engineering the Sovereignty Triangle<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#2-lighterim-re-engineering-the-sovereignty-triangle" class="hash-link" aria-label="Direct link to 2. Lighter.IM: Re-Engineering the Sovereignty Triangle" title="Direct link to 2. Lighter.IM: Re-Engineering the Sovereignty Triangle">​</a></h3>
+<p>Lighter.IM is not just another on-ramp; it is a <strong>Decentralized Settlement &amp; Delivery Protocol</strong>. We’ve utilized the best of the Web3 stack to ensure that no participant is ever left "hanging."</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-decoupling-ownership-from-control-uniswap-permit2">A. Decoupling Ownership from Control (Uniswap Permit2)<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#a-decoupling-ownership-from-control-uniswap-permit2" class="hash-link" aria-label="Direct link to A. Decoupling Ownership from Control (Uniswap Permit2)" title="Direct link to A. Decoupling Ownership from Control (Uniswap Permit2)">​</a></h4>
+<p>Traditional ERC-20 approvals are a security nightmare, requiring you to grant permanent control over your wallet.</p>
+<ul>
+<li><strong>Intent-Based Escrow</strong>: By integrating <strong>Permit2</strong>, Lighter.IM ensures funds only move at the exact moment a transaction is matched.</li>
+<li><strong>Self-Sovereignty</strong>: You retain absolute control over your assets until the settlement conditions are met. No more "infinite approvals" or funds sitting idle in vulnerable contracts.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="b-the-soul-of-the-trade-e2ee-via-nostr">B. The Soul of the Trade: E2EE via Nostr<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#b-the-soul-of-the-trade-e2ee-via-nostr" class="hash-link" aria-label="Direct link to B. The Soul of the Trade: E2EE via Nostr" title="Direct link to B. The Soul of the Trade: E2EE via Nostr">​</a></h4>
+<p>Communication is the "soul" of a P2P trade. Relying on centralized chat platforms means sacrificing privacy and inviting censorship.</p>
+<ul>
+<li><strong>The Nostr Layer</strong>: Lighter.IM leverages the <strong>Nostr Protocol</strong> for all P2P communications.</li>
+<li><strong>Encrypted Sovereignty</strong>: Every negotiation, payment detail, and intent is end-to-end encrypted and decentralized. There is no central server to snoop on your chats or block your signals. It is the gold standard for private, censorship-resistant trade coordination.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="c-trustless-verification-zktls--zkp">C. Trustless Verification (zkTLS &amp; ZKP)<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#c-trustless-verification-zktls--zkp" class="hash-link" aria-label="Direct link to C. Trustless Verification (zkTLS &amp; ZKP)" title="Direct link to C. Trustless Verification (zkTLS &amp; ZKP)">​</a></h4>
+<p>How do you prove you paid a bank transfer in a Web2 environment without doxing your entire bank statement?</p>
+<ul>
+<li><strong>zkTLS Integration</strong>: Lighter.IM uses <strong>Zero-Knowledge TLS</strong> to verify off-chain payment credentials.</li>
+<li><strong>Privacy-First Proofs</strong>: You can prove a payment was made without revealing your account balance or identity. The protocol acts as a neutral, "blind" arbiter, automatically releasing funds once the ZK-proof is verified.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-building-on-chain-honour-erc-6551">3. Building On-Chain "Honour" (ERC-6551)<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#3-building-on-chain-honour-erc-6551" class="hash-link" aria-label="Direct link to 3. Building On-Chain &quot;Honour&quot; (ERC-6551)" title="Direct link to 3. Building On-Chain &quot;Honour&quot; (ERC-6551)">​</a></h3>
+<p>Trust is the most expensive asset in Web3. Lighter.IM turns trust into a tangible, verifiable metric.</p>
+<ul>
+<li><strong>The Lighter Ticket (TBA)</strong>: Using the <strong>ERC-6551 (Token Bound Account)</strong> standard, your identity is not just a static NFT—it's a living, breathing account.</li>
+<li><strong>Accumulating "Honour"</strong>: Your fulfillment history, transaction count, and reputation are recorded directly within your TBA. This creates a "Public Verifiable Persona"—a foundation of credit that makes the ecosystem safer for everyone.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-bottom-line-a-positive-sum-game">The Bottom Line: A Positive-Sum Game<a href="https://docs.lighter.im/blog/The-Architecture-of-Trust#the-bottom-line-a-positive-sum-game" class="hash-link" aria-label="Direct link to The Bottom Line: A Positive-Sum Game" title="Direct link to The Bottom Line: A Positive-Sum Game">​</a></h3>
+<p>Lighter.IM remains neutral while maximizing participant rights. By fusing <strong>Nostr’s encryption</strong>, <strong>Permit2’s asset safety</strong>, and <strong>ERC-6551’s identity layer</strong>, we’ve created a "Social-Financial" layer where honesty is incentivized and security is baked into the code.</p>
+<p>When Ownership, Control, and Information Flow are perfectly aligned, trade isn't a gamble—it's a friction-less flow of value.</p>
+<p><strong>Join the Lighter.IM movement and help us build the new era of decentralized reputation.</strong></p>
+<hr>
+<p><strong>About Lighter.IM</strong>
+Lighter.IM is the next-gen ZKP-powered decentralized on/off-ramp. Combining Nostr-based communication, asymmetric escrow architecture, and zkTLS privacy, we provide the ultimate non-custodial gateway for the global P2P economy.</p>
+<ul>
+<li><strong>App</strong>: <a href="https://beta.lighter.im/" target="_blank" rel="noopener noreferrer">beta.lighter.im</a></li>
+<li><strong>Docs</strong>: <a href="https://docs.lighter.im/" target="_blank" rel="noopener noreferrer">docs.lighter.im</a></li>
+<li><strong>GitHub</strong>: <a href="https://github.com/lighterim" target="_blank" rel="noopener noreferrer">lighterim</a></li>
+</ul>]]></content:encoded>
+            <category>EIP-712</category>
+            <category>Uinswap</category>
+            <category>Permit2</category>
+            <category>Intent-Based</category>
+            <category>ZKP</category>
+            <category>MPC</category>
+            <category>TLSN</category>
+            <category>ERC-6551</category>
+        </item>
+        <item>
+            <title><![CDATA[Intents]]></title>
+            <link>https://docs.lighter.im/blog/2025/12/05/Intents</link>
+            <guid>https://docs.lighter.im/blog/2025/12/05/Intents</guid>
+            <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[incorporate the clarification regarding the execution frequency of the sell intents, making the distinction between the Bulk Sale (multi-fill) and Signed Sale (single-fill) explicit.]]></description>
+            <content:encoded><![CDATA[<p>incorporate the clarification regarding the execution frequency of the sell intents, making the distinction between the <strong>Bulk Sale</strong> (multi-fill) and <strong>Signed Sale</strong> (single-fill) explicit.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-revised-overview-of-decentralized-otc-protocol-scenarios">🤝 Revised Overview of Decentralized OTC Protocol Scenarios<a href="https://docs.lighter.im/blog/2025/12/05/Intents#-revised-overview-of-decentralized-otc-protocol-scenarios" class="hash-link" aria-label="Direct link to 🤝 Revised Overview of Decentralized OTC Protocol Scenarios" title="Direct link to 🤝 Revised Overview of Decentralized OTC Protocol Scenarios">​</a></h2>
+<table><thead><tr><th style="text-align:left">Scenario</th><th style="text-align:left">Maker (Post Intent)</th><th style="text-align:left">Taker (Accept/Confirm Intent)</th><th style="text-align:left">Intent Parameters &amp; Constraints</th><th style="text-align:left">Permit2 Mechanism</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Bulk Sale</strong></td><td style="text-align:left">Seller posts the intent, defining the constraints of the trade.</td><td style="text-align:left">Buyer accepts the intent, defining their own intent within the seller's constraints.</td><td style="text-align:left">Price: Fixed or Market-Following; Quantity: Total quantity authorized; <strong>Execution:</strong> Allows <strong>multiple</strong> fills by counterparties until quantity or time is exhausted; Counterparty Range: min &amp; max; Time: Intent validity deadline.</td><td style="text-align:left"><code>Permit2.permit</code> &amp; <code>Permit2.transferFrom</code>; Authorization for the spender &amp; spender initiates the fund transfer call.</td></tr><tr><td style="text-align:left"><strong>Signed Sale</strong></td><td style="text-align:left">Seller posts the intent, defining the constraints of the trade.</td><td style="text-align:left">Buyer accepts the intent, defining their own intent within the seller's constraints.</td><td style="text-align:left">Price: Fixed or Market-Following; Quantity: Max quantity allowed per counterparty transaction; <strong>Execution:</strong> Limited to a <strong>single</strong> transaction per intent; Counterparty Range: min &amp; max; Time: Intent validity deadline.</td><td style="text-align:left">Off-chain <strong>Permit2 signature</strong> &amp; <code>Permit2.permitWitnessTransferFrom</code> (requires Permit2 signature verification); Authorization for the spender &amp; spender initiates the fund transfer call.</td></tr><tr><td style="text-align:left"><strong>Buyer Intent</strong></td><td style="text-align:left">Buyer posts the intent.</td><td style="text-align:left">Seller accepts the intent, defining their own intent within the buyer's constraints.</td><td style="text-align:left">Price: Fixed or Market-Following; Quantity: Max quantity allowed per counterparty transaction; <strong>Execution:</strong> Limited to a <strong>single</strong> transaction per intent; Counterparty Range: min &amp; max; Time: Intent validity deadline.</td><td style="text-align:left">Off-chain <strong>Permit2 signature</strong> &amp; <code>Permit2.transferFrom</code> (requires Permit2 signature verification); Authorization for the spender &amp; spender initiates the fund transfer call.</td></tr></tbody></table>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[The Imperative for Intent-Based Transactions]]></title>
+            <link>https://docs.lighter.im/blog/The-Imperative-for-Intent-Based-Transactions</link>
+            <guid>https://docs.lighter.im/blog/The-Imperative-for-Intent-Based-Transactions</guid>
+            <pubDate>Tue, 21 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Decentralized trading inherently demands a counterparty. While on-chain transactions are ubiquitous, rapidly and efficiently matching with the right trading counterparty remains a significant hurdle in the ecosystem.]]></description>
+            <content:encoded><![CDATA[<p>Decentralized trading inherently demands a counterparty. While on-chain transactions are ubiquitous, rapidly and efficiently matching with the right trading counterparty remains a significant hurdle in the ecosystem.</p>
+<p>It becomes a game-changer when a user can delegate their trading intent to a solver or relayer that is empowered to execute the transaction faithfully and honestly. Moreover, in scenarios involving fund commitment, assets no longer need to sit idle or remain locked up before a viable counterparty is secured.</p>
+<p><code>EIP-712</code>-based <code>Uniswap Permit2</code> serves as this foundation of trust—the honest guardian for signed intents—driving widespread adoption and proliferation across the Ethereum and EVM-compatible ecosystems.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ensuring-intent-fulfillment">Ensuring Intent Fulfillment<a href="https://docs.lighter.im/blog/The-Imperative-for-Intent-Based-Transactions#ensuring-intent-fulfillment" class="hash-link" aria-label="Direct link to Ensuring Intent Fulfillment" title="Direct link to Ensuring Intent Fulfillment">​</a></h2>
+<p>Unlike the legacy <code>ERC-20</code> <code>approve/allowance</code> mechanism, <code>Permit2</code> abstracts and enforces several critical parameters: <strong>deadline, amount, spender, and Nonce</strong>.</p>
+<p>Every signed fund transfer must strictly adhere to these conditions. The unique Nonce is consumed upon first use, effectively eliminating replay attacks. Compared to the basic <code>approve/allowance</code>, this offers subtle, granular control over the authorized transfer across time, quantity, and single-use enforcement.</p>
+<p><code>Permit2</code> also introduces a <code>Witness</code> that can be incorporated into the signed authorization payload. This capability allows application layers built on <code>Permit2</code> to verify additional, highly detailed information provided by the witness. This witness data can enforce specific execution conditions, such as a <code>stop-loss/take-profit trigger</code> or precise controls for any particular scenario.</p>
+<p>Conceptually, the witness data acts as the specific memo on a traditional bank check. When an application attempts to execute the transaction, it performs a complete check and validation that includes both the fine-grained authorization controls and the execution conditions contained within the Witness data, fully validating the fund transfer authorization and the required contextual specifics.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="security-and-efficiency-advantages">Security and Efficiency Advantages<a href="https://docs.lighter.im/blog/The-Imperative-for-Intent-Based-Transactions#security-and-efficiency-advantages" class="hash-link" aria-label="Direct link to Security and Efficiency Advantages" title="Direct link to Security and Efficiency Advantages">​</a></h2>
+<p><strong>Granular Control</strong>: Control is extremely fine-grained, covering the <code>deadline</code>, <code>amount</code>, <code>spender</code>, and unique <code>nonce</code>, and further enhanced by scenario-specific rules via the Witness data.</p>
+<p><strong>No Infinite Approvals</strong>: There is no reliance on indefinite approve spending limits, nor is blanket authorization required for a specific dApp. A signature is only valid for a single, one-time use intent and cannot be replayed or reused.</p>
+<p><strong>Gas Efficiency via Off-Chain Signing</strong>: The signing process is performed off-chain (<code>EIP-712</code>), minimizing interaction with the blockchain. This signed authorization can be delegated to any party (typically a relayer) for on-chain execution, resulting in significant gas savings for the user.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-lighterim-leverages-permit2-for-intent-based-trading">How Lighter.IM Leverages Permit2 for Intent-Based Trading<a href="https://docs.lighter.im/blog/The-Imperative-for-Intent-Based-Transactions#how-lighterim-leverages-permit2-for-intent-based-trading" class="hash-link" aria-label="Direct link to How Lighter.IM Leverages Permit2 for Intent-Based Trading" title="Direct link to How Lighter.IM Leverages Permit2 for Intent-Based Trading">​</a></h2>
+<p><strong>Bulk Selling (Delegated Intent)</strong>: The Seller signs a single authorization specifying a deadline, the total available amount, price, counterparty (Buyer) constraints—such as acceptable single purchase quantities, and payment method details. The Buyer can then execute multiple atomic purchases within the specified constraints until the total amount is consumed or the deadline expires.</p>
+<p><strong>Single-Lot Selling (Atomic Intent)</strong>: The Seller signs an authorization constraining the deadline, amount range, price, and payment method, but the signature is limited to a single, one-time execution.</p>
+<p><strong>Taking Buyer Intent</strong>: The Seller confirms and accepts the Buyer's existing intent, initiating the trade with a single signature authorization to transfer the committed funds.</p>]]></content:encoded>
+            <category>EIP-712</category>
+            <category>Uinswap</category>
+            <category>Permit2</category>
+            <category>Intent-Based</category>
+        </item>
+    </channel>
+</rss>
