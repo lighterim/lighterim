@@ -72,4 +72,4 @@ You cannot destroy your NFT if you have **Pending Trades**. This is a safety loc
 
 ---
 
-> **Ready to trade?** > Join the Public Beta at [beta.lighter.im](https://beta.lighter.im) 🚀
+> **Ready to trade?** > Join the Public Beta at [lighter.im](https://lighter.im) 🚀

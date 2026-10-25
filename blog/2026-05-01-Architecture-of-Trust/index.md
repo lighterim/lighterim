@@ -66,6 +66,6 @@ When Ownership, Control, and Information Flow are perfectly aligned, trade isn't
 **About Lighter.IM**
 Lighter.IM is the next-gen ZKP-powered decentralized on/off-ramp. Combining Nostr-based communication, asymmetric escrow architecture, and zkTLS privacy, we provide the ultimate non-custodial gateway for the global P2P economy.
 
-*   **App**: [beta.lighter.im](https://beta.lighter.im)
+*   **App**: [lighter.im](https://lighter.im)
 *   **Docs**: [docs.lighter.im](https://docs.lighter.im)
 *   **GitHub**: [lighterim](https://github.com/lighterim)

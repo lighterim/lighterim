@@ -50,11 +50,11 @@ To simulate a real trade, we recommend using two different browser profiles or b
 
 Follow these steps to complete a full trade cycle:
 
-1. **Onboarding:** Navigate to [beta.lighter.im/landing](https://beta.lighter.im/landing) to create your profile (both Buyer & Seller).
-2. **Identity Minting:** Go to [beta.lighter.im/profile](https://beta.lighter.im/profile) and **Rent/Mint your Membership NFT**. This is required to participate in the protocol.
-3. **Create Intent (Seller):** Head to [beta.lighter.im/intents](https://beta.lighter.im/intents) and click **"Post New Intent"** to list your assets for sale.
+1. **Onboarding:** Navigate to [lighter.im/landing](https://lighter.im/landing) to create your profile (both Buyer & Seller).
+2. **Identity Minting:** Go to [lighter.im/profile](https://lighter.im/profile) and **Rent/Mint your Membership NFT**. This is required to participate in the protocol.
+3. **Create Intent (Seller):** Head to [lighter.im/intents](https://lighter.im/intents) and click **"Post New Intent"** to list your assets for sale.
 4. **Accept Intent (Buyer):** From the Buyer's browser, find the listing and click **"Take"**.
-5. **Payment (Buyer):** In the [Trade Dashboard](https://beta.lighter.im/trade), notify the seller by clicking **"Payment Completed"** once you have sent the fiat/off-chain payment.
+5. **Payment (Buyer):** In the [Trade Dashboard](https://lighter.im/trade), notify the seller by clicking **"Payment Completed"** once you have sent the fiat/off-chain payment.
 6. **Release (Seller):** Verify the payment receipt and click **"Release Funds"** to trigger the smart contract escrow.
 7. **Settlement (Buyer):** Go to your profile and click **"Claim"** to withdraw the assets to your wallet.
 
